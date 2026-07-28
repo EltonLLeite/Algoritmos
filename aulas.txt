@@ -1,0 +1,22 @@
+Alexandre Zamberlan (alexz@ufn.edu.br);
+
+aula 1 {
+
+	para usar o vscode precisa instalar {
+		Git;
+		MinGW64;
+		Compilador C/C++; //DevCpp
+	}
+
+	micro-serviços;
+	módulos/decomposição funcional;
+	structs;
+	ponteiros (alocação dinâmica de memoria);
+	
+	estruturas de dados;
+	P.O.O;
+
+	aprendemos compilação em C e C++;
+
+}
+
