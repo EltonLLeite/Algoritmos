@@ -6,4 +6,9 @@ todo vetor é um ponteiro
 
 flush = descarga
 fflush = descarga de memoria
+
+vetor no c++ {
+    .push_back() <-- insere valores no vetor;
+    .erase() <-- remove valores do vetor;
+  }
 }
