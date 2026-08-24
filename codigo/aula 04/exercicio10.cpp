@@ -8,6 +8,7 @@ using namespace std;
 
 int opcao;
 
+// function que cria o menu
 void Menu() {
     cout << "MENU" << endl;
     cout << "1 - Cadastrar funcionário" << endl;
@@ -21,7 +22,7 @@ int main() {
 
     Funcionario funcionario;
     vector<Funcionario> funcionarios;
-    srand(time(NULL));
+    srand(time(NULL)); // gerador de numeros aleatorios
 
     do
     {
@@ -34,7 +35,7 @@ int main() {
             cout << "Cadastrar funcionario..." << endl;
             if (funcionarios.size() < 100)
             {
-                funcionario.codigo = rand() % 900000000 + 100000000;
+                funcionario.codigo = rand() % 900000000 + 100000000; // gera um codigo aleatorio de 9 digitos para o funcionario
                 cout << "Idade: ";
                 cin >> funcionario.idade;
                 cout << "Salario: ";
