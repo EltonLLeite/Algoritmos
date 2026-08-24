@@ -12,3 +12,11 @@ vetor no c++ {
     .erase() <-- remove valores do vetor;
   }
 }
+
+Aula 24/08/26{
+    struct {
+        Recurso antigo, para criar TIPOS do programador;
+        Ideia de encapsulamento;
+        forma um conjunto heterogêneo de dados;
+    }
+}
