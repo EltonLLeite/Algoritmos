@@ -31,11 +31,11 @@ int main() {
                 {
                     cout << "Codigo: ";
                     cin >> cliente.codigo;
-                    if (cliente.codigo < 900000000 || cliente.codigo > 999999999)
+                    if (cliente.codigo < 100000000 || cliente.codigo > 999999999)
                     {
                         cout << "Codigo invalido... Redigite" << endl;
                     }
-                } while (cliente.codigo < 900000000 || cliente.codigo > 999999999);
+                } while (cliente.codigo < 100000000 || cliente.codigo > 999999999);
                 
                 do
                 {
