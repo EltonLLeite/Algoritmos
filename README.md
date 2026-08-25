@@ -14,6 +14,7 @@ vetor no c++ {
 }
 
 Aula 24/08/26{
+
     struct {
         Recurso antigo, para criar TIPOS do programador;
         Ideia de encapsulamento;
