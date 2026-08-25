@@ -27,11 +27,26 @@ int main() {
             cout << "Cadastrar cliente..." << endl;
             if (clientes.size() < 100)
             {
-                cout << "Codigo: ";
-                cin >> cliente.codigo;
-                cout << "Idade: ";
-                cin >> cliente.idade;
-
+                do
+                {
+                    cout << "Codigo: ";
+                    cin >> cliente.codigo;
+                    if (cliente.codigo < 900000000 || cliente.codigo > 999999999)
+                    {
+                        cout << "Codigo invalido... Redigite" << endl;
+                    }
+                } while (cliente.codigo < 900000000 || cliente.codigo > 999999999);
+                
+                do
+                {
+                    cout << "Idade: ";
+                    cin >> cliente.idade;
+                    if (cliente.idade < 16 || cliente.idade > 99)
+                    {
+                        cout << "Idade invalida... Redigite" << endl;
+                    }
+                } while (cliente.idade < 16 || cliente.idade > 99);
+                
                 cin.ignore();
 
                 cout << "Telefone: ";
