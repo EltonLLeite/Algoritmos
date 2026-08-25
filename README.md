@@ -19,4 +19,10 @@ Aula 24/08/26{
         Ideia de encapsulamento;
         forma um conjunto heterogêneo de dados;
     }
+
+    leitura de arquivos {
+        introdução a leitura de arquivos;
+        #include <fstream>;
+        fizemos um codigo ler linha por linha;
+    }
 }
