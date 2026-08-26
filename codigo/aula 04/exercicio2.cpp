@@ -34,13 +34,36 @@ int main() {
             cout << "Cadastrar produto..." << endl;
             if (produtos.size() < LIMITADOR)
             {
-               cout << "Codigo (9 digitos): ";
-               cin >> produto.codigo;
-               cout << "Quantidade: ";
-               cin >> produto.quantidade;
-               cout << "Preco: ";
-               cin >> precoUnico;
-
+               do
+               {
+                    cout << "Codigo (9 digitos): ";
+                    cin >> produto.codigo;
+                    if (produto.codigo < 100000000 || produto.codigo > 999999999)
+                    {
+                        cout << "Codigo invalido... Redigite" << endl;
+                    }
+               } while (produto.codigo < 100000000 || produto.codigo > 999999999);
+               
+               do
+               {
+                    cout << "Quantidade: ";
+                    cin >> produto.quantidade;
+                    if (produto.quantidade < 1 || produto.quantidade > 1000000)
+                    {
+                        cout << "Quantidade invalida... Redigite" << endl;
+                    }
+               } while (produto.quantidade < 1 || produto.quantidade > 1000000);
+               
+               do
+               {
+                    cout << "Preco: ";
+                    cin >> precoUnico;
+                    if (precoUnico < 0 || precoUnico > 100000)
+                    {
+                        cout << "Preco invalido... Redigite" << endl;
+                    }
+               } while (precoUnico < 0 || precoUnico > 100000);
+               
                produto.preco = produto.quantidade * precoUnico;
 
                produtos.push_back(produto);
