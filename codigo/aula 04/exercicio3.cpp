@@ -35,10 +35,25 @@ int main() {
             if (alunos.size() < 100)
             {
                 aluno.matricula = rand() % 900000000 + 100000000;
-                cout << "Nota 1: ";
-                cin >> aluno.nota1;
-                cout << "Nota 2: ";
-                cin >> aluno.nota2;
+                do
+                {
+                    cout << "Nota 1: ";
+                    cin >> aluno.nota1;
+                    if (aluno.nota1 < 0 || aluno.nota1 > 10)
+                    {
+                        cout << "Nota invalida... Redigite" << endl;
+                    }
+                } while (aluno.nota1 < 0 || aluno.nota1 > 10);
+                
+                do
+                {
+                    cout << "Nota 2: ";
+                    cin >> aluno.nota2;
+                    if (aluno.nota2 < 0 || aluno.nota2 > 10)
+                    {
+                        cout << "Nota invalida... Redigite" << endl;
+                    }
+                } while (aluno.nota2 < 0 || aluno.nota2 > 10);
 
                 alunos.push_back(aluno);
             }
