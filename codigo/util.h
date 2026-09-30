@@ -121,3 +121,13 @@ int contadorPalavrasFrase(string frase)
     }
     return qtdPalavras + 1; // +1 para contar a ultima palavra
 }
+
+float calcularMedia(vector<float> notas)
+{
+    float soma = 0;
+    for (int i = 0; i < notas.size(); i++)
+    {
+        soma += notas[i];
+    }
+    return soma / notas.size();
+}
