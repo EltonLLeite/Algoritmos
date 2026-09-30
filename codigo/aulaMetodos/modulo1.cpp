@@ -16,7 +16,7 @@ int main() {
     string palavra;
     char letra;
 
-    receberPalavraeLetra(palavra, letra);
+    contadorLetraPalavra(palavra, letra);
 
     return 0;
 }

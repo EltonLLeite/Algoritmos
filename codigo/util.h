@@ -1,4 +1,4 @@
-void receberPalavraeLetra(string palavra, char letra)
+void contadorLetraPalavra(string palavra, char letra)
 {
     cout << "digite uma palavra: ";
     cin >> palavra;
@@ -107,4 +107,17 @@ string obterPrimeiroNome(string nomeCompleto) {
         }
     }
     return "Nome sem espaços";
+}
+
+int contadorPalavrasFrase(string frase)
+{
+    int qtdPalavras = 0;
+    for (int i = 0; i < frase.length(); i++)
+    {
+        if (frase[i] == ' ')
+        {
+            qtdPalavras++;
+        }
+    }
+    return qtdPalavras + 1; // +1 para contar a ultima palavra
 }
