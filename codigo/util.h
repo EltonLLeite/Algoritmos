@@ -1,3 +1,5 @@
+#include <vector>
+
 void contadorLetraPalavra(string palavra, char letra)
 {
     cout << "digite uma palavra: ";
@@ -6,9 +8,9 @@ void contadorLetraPalavra(string palavra, char letra)
     cin >> letra;
 
     int contador = 0;
-    for (int i = 0; i < palavra.length(); i++)
+    for (char c : palavra)
     {
-        if (letra == palavra[i])
+        if (letra == c)
         {
             contador++;
         }
@@ -95,10 +97,7 @@ bool verificarOrdenacaoVetor(int vetor[], int tamanho)
 }
 
 string obterPrimeiroNome(string nomeCompleto) {
-    cout << "Digite um nome completo: ";
-    getline(cin, nomeCompleto);
-
-    for (int i = 0; i < nomeCompleto.length(); i++)
+        for (int i = 0; i < nomeCompleto.length(); i++)
     {
         if (nomeCompleto[i] == ' ')
         {
@@ -107,6 +106,13 @@ string obterPrimeiroNome(string nomeCompleto) {
         }
     }
     return "Nome sem espaços";
+}
+
+string obterUltimoNome(string nomeCompleto)
+{
+    int ultimoEspaco = nomeCompleto.rfind(' ');
+    string ultimoNome = nomeCompleto.substr(ultimoEspaco + 1);
+    return ultimoNome;
 }
 
 int contadorPalavrasFrase(string frase)
