@@ -1,0 +1,4 @@
+Jesus Walks;Kanye West;Rap;10;
+GO;BLACKPINK;K-POP;8.7;
+Thunder;LISA;K-POP;7;
+Loose;Daniel Caesar;Indie;7.1;
