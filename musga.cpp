@@ -59,6 +59,60 @@ void atualizarArquivo(string nomeArquivo, vector<Musga> musgas)
 }
 
 bool cadastrarMusga(vector<Musga>& musgas)
+{
+    Musga musga;
+
+    cin.ignore();
+
+    cout << "Digite o nome da musica: ";
+    getline(cin, musga.nome);
+    if (musga.nome == "")
+    {
+        cout << "O nome não pode ser vazio" << endl;
+        return false;
+    }
+    cout << "Digite o nome do(a) artista: ";
+    getline(cin, musga.artista);
+    if (musga.artista == "")
+    {
+        cout << "O artista não pode ser vazio" << endl;
+        return false;
+    }
+    cout << "Digite o genero: ";
+    getline(cin, musga.genero);
+    if (musga.genero == "")
+    {
+        cout << "O genero não pode ser vazio" << endl;
+        return false;
+    }
+    cout << "Digite a nota da musica: ";
+    getline(cin, musga.nota);
+    if (musga.nota == "")
+    {
+        cout << "A nota não pode ser vazia" << endl;
+        return false;
+    }
+
+    musgas.push_back(musga);
+    return true;
+}
+
+void listarMusgas(vector<Musga> musgas)
+{
+    if (musgas.size() == 0)
+    {
+        cout << "Lista Vazia..." << endl;
+        return;
+    }
+    
+    for (int i = 0; i < musgas.size(); i++)
+    {
+        cout << "Musica " << i+1 << ": " << musgas[i].nome << " - ";
+        cout << musgas[i].artista << " | Genero: " << musgas[i].genero;
+        cout << " | Nota: " << musgas[i].nota << endl;
+    }
+    
+}
 
 int main() {
 
@@ -70,7 +124,6 @@ int main() {
 
     do
     {
-        system("cls");
         cout << "***MENU***" << endl;
         cout << "1 - Cadastrar musica" << endl;
         cout << "2 - listar musicas" << endl;
@@ -83,13 +136,21 @@ int main() {
         {
         case 1:
             cout << "Cadastrar musica..." << endl;
-
+            if (cadastrarMusga(musgas))
+            {
+                atualizarArquivo(nomeArquivo, musgas);
+                cout << "funcionou" << endl;
+            }
             break;
-        
+        case 2:
+            listarMusgas(musgas);
+            break;
         default:
             break;
         }
+        system("pause");
+        system("cls");
     } while (opcao != 0);
-    
+    system("cls");
     return 0;
 }
