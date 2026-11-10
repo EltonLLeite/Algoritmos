@@ -1,3 +1,4 @@
 Jesus Walks;Kanye West;Rap;10;
-nigga;taylor swift;pop;100;
-aaa;aaaa;aaa;aaa;
+GO;BLACKPINK;K-POP;8.7;
+Thunder;LISA;K-POP;7;
+Loose;Daniel Caesar;Indie;7.1;

@@ -31,6 +31,7 @@ void carregarArquivo(string nomeArquivo, vector<Musga>& musgas)
         getline(arquivo, musga.artista, ';');
         getline(arquivo, musga.genero, ';');
         getline(arquivo, musga.nota, ';');  
+        arquivo.ignore();
 
         if (arquivo.fail())
         {
@@ -114,6 +115,169 @@ void listarMusgas(vector<Musga> musgas)
     
 }
 
+void removerMusga(vector<Musga>& musgas)
+{
+    string nome, artista;
+
+    cin.ignore();
+
+    cout << "Digite o nome da musica: ";
+    getline(cin, nome);
+    
+    bool encontrado = false;
+    int qtdMusgas = 0;
+    for (int i = 0; i < musgas.size(); i++)
+    {
+        if (nome == musgas[i].nome)
+        {
+            qtdMusgas++;
+            encontrado = true;
+        }
+    }
+    if (qtdMusgas == 1)
+    {
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (nome == musgas[i].nome)
+            {
+                encontrado = true;
+                musgas.erase(musgas.begin() + i);
+            }
+        }
+    }
+    
+    else if (qtdMusgas > 1)
+    {
+        cout << "Musicas encontradas:" << endl;
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (nome == musgas[i].nome)
+            {
+                cout << musgas[i].nome << " - " << musgas[i].artista << endl;
+            }
+        }
+        cout << "Digite o artista da musica que deseja excluir: ";
+        getline(cin, artista);
+        encontrado = false;
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (nome == musgas[i].nome && artista == musgas[i].artista)
+            {
+                encontrado = true;
+                musgas.erase(musgas.begin() + i);
+            }
+        }
+    }
+    if (encontrado)
+    {
+        cout << "Musica removida com sucesso" << endl;
+        cout << encontrado;
+    }
+    else
+    {
+        cout << "Musica nao registrada ou nao encontrada" << endl;
+        cout << encontrado;
+    }
+}
+
+void pesquisarMusga(vector<Musga> musgas)
+{
+    Musga musga;
+    string opcao;
+
+    cin.ignore();
+
+    cout << "Deseja pesquisar por qual parametro? (nome, artista, genero, nota): ";
+    cin >> opcao;
+
+    bool encontrado = false;
+    if (opcao == "nome")
+    {
+        cin.ignore();
+        cout << "Digite o nome da musica: ";
+        getline(cin, musga.nome);
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (musga.nome == musgas[i].nome)
+            {
+                encontrado = true;
+                cout << "Musica " << i+1 << ": " << musgas[i].nome << " - ";
+                cout << musgas[i].artista << " | Genero: " << musgas[i].genero;
+                cout << " | Nota: " << musgas[i].nota << endl;
+            }
+        }
+        if (!encontrado)
+        {
+            cout << "nenhuma musica encontrada..." << endl;
+        }
+    }
+    else if (opcao == "artista")
+    {
+        cin.ignore();
+        cout << "Digite o nome do(a) artista: ";
+        getline(cin, musga.artista);
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (musga.artista == musgas[i].artista)
+            {
+                encontrado = true;
+                cout << "Musica " << i+1 << ": " << musgas[i].nome << " - ";
+                cout << musgas[i].artista << " | Genero: " << musgas[i].genero;
+                cout << " | Nota: " << musgas[i].nota << endl;
+            }
+        }
+        if (!encontrado)
+        {
+            cout << "nenhuma musica encontrada..." << endl;
+        }
+    }
+    else if (opcao == "genero")
+    {
+        cin.ignore();
+        cout << "Digite o genero da musica: ";
+        getline(cin, musga.genero);
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (musga.genero == musgas[i].genero)
+            {
+                encontrado = true;
+                cout << "Musica " << i+1 << ": " << musgas[i].nome << " - ";
+                cout << musgas[i].artista << " | Genero: " << musgas[i].genero;
+                cout << " | Nota: " << musgas[i].nota << endl;
+            }
+        }
+        if (!encontrado)
+        {
+            cout << "nenhuma musica encontrada..." << endl;
+        }
+    }
+    else if (opcao == "nota")
+    {
+        cin.ignore();
+        cout << "Digite a nota da musica: ";
+        getline(cin, musga.nota);
+        for (int i = 0; i < musgas.size(); i++)
+        {
+            if (musga.nota == musgas[i].nota)
+            {
+                encontrado = true;
+                cout << "Musica " << i+1 << ": " << musgas[i].nome << " - ";
+                cout << musgas[i].artista << " | Genero: " << musgas[i].genero;
+                cout << " | Nota: " << musgas[i].nota << endl;
+            }
+        }
+        if (!encontrado)
+        {
+            cout << "nenhuma musica encontrada..." << endl;
+        }
+    }
+    else
+    {
+        cout << "opcao invalida" << endl;
+        return;
+    }
+}
+
 int main() {
 
     vector<Musga> musgas;
@@ -144,6 +308,13 @@ int main() {
             break;
         case 2:
             listarMusgas(musgas);
+            break;
+        case 3:
+            removerMusga(musgas);
+            atualizarArquivo(nomeArquivo, musgas);  
+            break;
+        case 4:
+            pesquisarMusga(musgas);
             break;
         default:
             break;
