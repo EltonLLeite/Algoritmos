@@ -1,3 +1,6 @@
+/*
+CÓDIGO PARA UMA LISTA DE AVALIAÇÃO DE MÚSICAS (musga == musica)
+*/
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -171,12 +174,10 @@ void removerMusga(vector<Musga>& musgas)
     if (encontrado)
     {
         cout << "Musica removida com sucesso" << endl;
-        cout << encontrado;
     }
     else
     {
         cout << "Musica nao registrada ou nao encontrada" << endl;
-        cout << encontrado;
     }
 }
 
@@ -288,11 +289,12 @@ int main() {
 
     do
     {
-        cout << "***MENU***" << endl;
+        cout << "\n***MENU***" << endl;
         cout << "1 - Cadastrar musica" << endl;
-        cout << "2 - listar musicas" << endl;
-        cout << "3 - remover musica" << endl;
-        cout << "4 - pesquisar" << endl;
+        cout << "2 - Listar musicas" << endl;
+        cout << "3 - Remover musica" << endl;
+        cout << "4 - Pesquisar" << endl;
+        cout << "0 - Sair" << endl;
         cout << "Escolha uma opcao: ";
         cin >> opcao;
 
@@ -317,6 +319,7 @@ int main() {
             pesquisarMusga(musgas);
             break;
         default:
+            cout << "Opção invalida" << endl;
             break;
         }
         system("pause");
