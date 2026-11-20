@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 Jesus Walks;Kanye West;Rap;10;
 GO;BLACKPINK;K-POP;8.7;
 Thunder;LISA;K-POP;7;
 Loose;Daniel Caesar;Indie;7.1;
-=======
-Jesus Walks;Kanye West;Rap;10;
-GO;BLACKPINK;K-POP;8.7;
-Thunder;LISA;K-POP;7;
-Loose;Daniel Caesar;Indie;7.1;
->>>>>>> e62eaaaaf0c0d8065d6c17eceb0ff8d1bc55379d
